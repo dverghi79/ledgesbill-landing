@@ -238,6 +238,53 @@
     .founder-booking-badge{ position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; align-items:center; gap:8px; padding:12px 20px; background:rgba(17,17,19,0.9); color:#fff; border:1px solid var(--border); border-radius:14px; cursor:pointer; font-family:inherit; font-size:14px; font-weight:600; box-shadow:0 8px 32px rgba(0,0,0,0.4); transition:all 0.3s; text-decoration:none; backdrop-filter:blur(12px); }
     .founder-booking-badge:hover{ transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.5); border-color:rgba(14,165,233,0.2); color:#fff; }
     .founder-booking-badge svg{ width:18px; height:18px; flex-shrink:0; }
+  
+    /* ── Aha Morphing Animation ── */
+    .aha-wrap{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#111113;}
+    .aha-chrome{background:#161618;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid var(--border);}
+    .aha-dots span{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px;}
+    .aha-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:8px;transition:all 0.6s ease;}
+    .aha-status.pain{background:rgba(239,68,68,0.12);color:#ef4444;}
+    .aha-status.syncing{background:rgba(168,85,247,0.12);color:#a855f7;}
+    .aha-status.done{background:rgba(34,197,94,0.12);color:#22c55e;}
+    .aha-body{padding:1.5rem 1.5rem 1rem;position:relative;}
+    .aha-caption{text-align:center;padding:0.75rem 0 1rem;font-size:1.1rem;font-weight:700;transition:all 0.5s ease;min-height:2.5rem;}
+    .aha-form{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;transition:all 0.8s ease;}
+    .aha-field{padding:0.6rem 0.75rem;border-radius:8px;font-size:0.75rem;font-family:'JetBrains Mono',monospace;transition:all 0.8s ease;position:relative;overflow:hidden;}
+    .aha-field-label{font-size:0.55rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;transition:color 0.6s ease;}
+    .aha-field-value{font-size:0.8rem;font-weight:500;transition:color 0.6s ease;}
+    .aha-field.full{grid-column:1/-1;}
+    .aha-form.state-pain .aha-field{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);}
+    .aha-form.state-pain .aha-field-label{color:rgba(239,68,68,0.6);}
+    .aha-form.state-pain .aha-field-value{color:var(--text-muted);}
+    .aha-form.state-pain .aha-field.has-error{border-color:#ef4444;box-shadow:0 0 0 1px rgba(239,68,68,0.3);}
+    .aha-form.state-pain .aha-field.has-error .aha-field-value{color:#ef4444;text-decoration:line-through;}
+    .aha-form.state-syncing .aha-field{background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);}
+    .aha-form.state-syncing .aha-field-label{color:rgba(168,85,247,0.6);}
+    .aha-form.state-syncing .aha-field-value{color:#a855f7;}
+    .aha-form.state-done .aha-field{background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.18);}
+    .aha-form.state-done .aha-field-label{color:rgba(34,197,94,0.6);}
+    .aha-form.state-done .aha-field-value{color:var(--text-primary);}
+    .aha-form.state-done .aha-field.has-error{border-color:rgba(34,197,94,0.18);box-shadow:none;}
+    .aha-form.state-done .aha-field.has-error .aha-field-value{color:var(--text-primary);text-decoration:none;}
+    .aha-scan{height:2px;background:transparent;margin:0.75rem 0 0;border-radius:2px;overflow:hidden;position:relative;}
+    .aha-scan-bar{position:absolute;top:0;left:0;width:0;height:100%;border-radius:2px;transition:width 1.2s ease-in-out;}
+    .aha-timer-strip{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.5rem 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;transition:all 0.5s ease;min-height:2rem;}
+    @media (max-width:600px){.aha-form{grid-template-columns:1fr;}}
+
+    /* ── Logical Closer ── */
+    .closer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;}
+    .closer-card{border-radius:16px;padding:2rem 1.75rem;}
+    .closer-card-old{background:rgba(239,68,68,0.03);border:1px solid rgba(239,68,68,0.12);}
+    .closer-card-new{background:rgba(34,197,94,0.03);border:1px solid rgba(34,197,94,0.15);}
+    .closer-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+    .closer-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.15rem;}
+    .closer-item:last-child{margin-bottom:0;}
+    .closer-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+    .closer-icon-x{background:rgba(239,68,68,0.1);}
+    .closer-icon-check{background:rgba(34,197,94,0.1);}
+    @media (max-width:700px){.closer-grid{grid-template-columns:1fr;}}
+
   </style>
 </head>
 <body>
@@ -403,6 +450,68 @@
       </div>
     </div>
   </section>
+
+  <!-- AHA MOMENT — Live UI Morphing Animation -->
+  <section id="aha-section" style="padding:2rem 0 4rem;">
+    <div class="container">
+      <p class="section-label reveal">See it in action</p>
+      <h2 class="section-title reveal" style="margin-bottom:2rem;">
+        From <span class="gradient-text">spreadsheet billing</span> to done in seconds.
+      </h2>
+      <div class="aha-wrap reveal-scale">
+        <div class="aha-chrome">
+          <div class="aha-dots">
+            <span style="background:#ef4444;"></span>
+            <span style="background:#eab308;"></span>
+            <span style="background:#22c55e;"></span>
+          </div>
+          <div id="aha-status" class="aha-status pain">Manual Review</div>
+        </div>
+        <div class="aha-body">
+          <div id="aha-caption" class="aha-caption" style="color:#ef4444;">Cross-referencing billing entries against guidelines...</div>
+          <div id="aha-form" class="aha-form state-pain">
+            <div class="aha-field">
+              <div class="aha-field-label">Matter</div>
+              <div class="aha-field-value" data-pain="Smith v. Acme Corp (checking...)" data-done="Smith v. Acme Corp — Case #2024-1847">Smith v. Acme Corp (checking...)</div>
+            </div>
+            <div class="aha-field has-error">
+              <div class="aha-field-label">Billing Attorney</div>
+              <div class="aha-field-value" data-pain="J. Williams? K. Williams?" data-done="K. Williams — Partner Rate $485/hr">J. Williams? K. Williams?</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Total Hours</div>
+              <div class="aha-field-value" data-pain="(adding up 47 entries...)" data-done="127.5 hours �� $52,187.50">(adding up 47 entries...)</div>
+            </div>
+            <div class="aha-field has-error">
+              <div class="aha-field-label">Block Billing</div>
+              <div class="aha-field-value" data-pain="(scanning line by line...)" data-done="⚠ 3 entries flagged — lines 12, 28, 41">(scanning line by line...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Rate Compliance</div>
+              <div class="aha-field-value" data-pain="(checking rate card...)" data-done="✓ All rates within guidelines">(checking rate card...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Duplicate Entries</div>
+              <div class="aha-field-value" data-pain="(comparing dates manually...)" data-done="✓ No duplicates detected">(comparing dates manually...)</div>
+            </div>
+            <div class="aha-field full has-error">
+              <div class="aha-field-label">Guideline Violations</div>
+              <div class="aha-field-value" data-pain="(reading 200-page billing guide...)" data-done="2 violations: vague descriptions lines 15, 33">(reading 200-page billing guide...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Adjusted Total</div>
+              <div class="aha-field-value" data-pain="$... (need to recalculate)" data-done="$49,412.50 — $2,775 reduction recommended">$... (need to recalculate)</div>
+            </div>
+          </div>
+          <div class="aha-scan"><div id="aha-scan-bar" class="aha-scan-bar"></div></div>
+          <div id="aha-timer" class="aha-timer-strip" style="color:#ef4444;">
+            <span id="aha-timer-text">~45 minutes per bill</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ═══════════════════════════════════════════
        WORKS WITH
@@ -605,6 +714,103 @@
       </div>
     </div>
   </section>
+
+  <!-- LOGICAL CLOSER — Old Way vs. New Way -->
+  <section style="padding:4rem 0 5rem;">
+    <div class="container">
+      <p class="section-label reveal">Why switch</p>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">
+        The old way vs. <span class="gradient-text">the LedgesBill way.</span>
+      </h2>
+      <div class="closer-grid">
+        <div class="closer-card closer-card-old reveal reveal-delay-1">
+          <div class="closer-label" style="color:#ef4444;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            The Old Way
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">45+ minutes per bill review</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Paralegals manually cross-reference every entry against outside counsel guidelines.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Block billing slips through</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Vague time entries and bundled tasks get approved because nobody has time to catch them.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Rate card violations missed</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Wrong rates applied across dozens of matters — discovered months later during audits.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">No audit trail</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">When carriers ask why a bill was approved, you're scrambling to reconstruct the review.</p>
+            </div>
+          </div>
+        </div>
+        <div class="closer-card closer-card-new reveal reveal-delay-2">
+          <div class="closer-label" style="color:#22c55e;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            With LedgesBill
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">15-second bill review</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every line item scanned against your firm's billing guidelines automatically.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Block billing flagged instantly</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Vague entries, bundled tasks, and excessive time are highlighted before approval.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Rate compliance enforced</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every timekeeper's rate checked against the approved rate card — zero exceptions.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Complete audit trail</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every review decision documented with timestamps, flags, and adjustments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ═══════════════════════════════════════════
        HOW IT WORKS
@@ -1000,6 +1206,68 @@
       }
       return false;
     }
+  
+    /* ── Aha Morphing Animation ── */
+    (function() {
+      var form = document.getElementById('aha-form');
+      var status = document.getElementById('aha-status');
+      var caption = document.getElementById('aha-caption');
+      var scanBar = document.getElementById('aha-scan-bar');
+      var timer = document.getElementById('aha-timer');
+      var timerText = document.getElementById('aha-timer-text');
+      if (!form || !status) return;
+      var fields = form.querySelectorAll('.aha-field-value');
+      var section = document.getElementById('aha-section');
+      var started = false;
+      function runCycle() {
+        form.className = 'aha-form state-pain';
+        status.className = 'aha-status pain';
+        status.textContent = 'Manual Review';
+        caption.style.color = '#ef4444';
+        caption.textContent = 'Cross-referencing billing entries against guidelines...';
+        scanBar.style.width = '0';
+        scanBar.style.background = 'transparent';
+        timer.style.color = '#ef4444';
+        timerText.textContent = '~45 minutes per bill';
+        fields.forEach(function(f) { f.textContent = f.dataset.pain; });
+        setTimeout(function() {
+          form.className = 'aha-form state-syncing';
+          status.className = 'aha-status syncing';
+          status.textContent = 'AI Analyzing...';
+          caption.style.color = '#a855f7';
+          caption.textContent = 'LedgesBill scanning invoice for compliance issues...';
+          scanBar.style.background = 'linear-gradient(90deg, #a855f7, #8b5cf6)';
+          scanBar.style.width = '100%';
+          timer.style.color = '#a855f7';
+          timerText.textContent = 'Scanning entries...';
+        }, 3000);
+        setTimeout(function() {
+          fields.forEach(function(f, i) {
+            setTimeout(function() { f.textContent = f.dataset.done; }, i * 150);
+          });
+        }, 4500);
+        setTimeout(function() {
+          form.className = 'aha-form state-done';
+          status.className = 'aha-status done';
+          status.textContent = 'Done in 15s';
+          caption.style.color = '#22c55e';
+          caption.textContent = 'Bill reviewed. 3 issues flagged. Clean version ready.';
+          scanBar.style.background = 'linear-gradient(90deg, #22c55e, #16a34a)';
+          timer.style.color = '#22c55e';
+          timerText.textContent = '15 seconds — 3 issues caught';
+        }, 6000);
+        setTimeout(function() { runCycle(); }, 10000);
+      }
+      var ahaObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !started) {
+          started = true;
+          runCycle();
+          ahaObs.unobserve(section);
+        }
+      }, { threshold: 0.3 });
+      ahaObs.observe(section);
+    })();
+
   </script>
 
   <!-- Floating "Book a Call" Badge -->
@@ -1008,6 +1276,21 @@
     Book a Call
   </a>
 
+
+<!-- DKI: Dynamic Keyword Insertion — replaces hero H1 with ?headline= param -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var hl = params.get('headline');
+  if (hl) {
+    var h1 = document.querySelector('h1.reveal.reveal-delay-1') || document.querySelector('section h1') || document.querySelector('h1');
+    if (h1) {
+      h1.setAttribute('data-default-headline', h1.innerHTML);
+      h1.textContent = decodeURIComponent(hl.replace(/\+/g, ' '));
+    }
+  }
+});
+</script>
+
 </body>
 </html>
-<!-- env vars configured -->
