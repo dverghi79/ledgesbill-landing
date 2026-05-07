@@ -44,6 +44,7 @@ module.exports = async function handler(req, res) {
     }
     contactPayload.properties = {
       source: productName,
+      product: productName,
       signed_up_at: new Date().toISOString(),
     };
 
